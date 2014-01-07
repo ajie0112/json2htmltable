@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>json2htmltable</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>	
+	<script src="json2htmltable.js"></script>
+
+	<style type="text/css">
+	body {
+  		font-family: "Consolas";
+		font-size: 14px;
+	}
+
+	.commtbl{	
+		border: 1px solid #95b8e7;	
+		border-collapse:collapse; 
+		padding: 5px 5px 5px 5px;
+	}
+
+	.commtbl td {
+		border-right:1px solid #95b8e7; 
+		border-top: 1px solid #95b8e7;
+		line-height: 180%;
+		padding: 5px 5px 5px 5px;		
+	}
+
+	</style>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			
+			var testObj = {
+				"name"    : "a",
+				"age"     : 20,
+				"money"   : 1000,
+				"friends" : [{
+						"name"  : "b"
+					},
+					{
+						"name"  : "c"
+					}
+				]				
+			};
+						
+			
+			$('#vt').html(json2htmltable.vt(testObj, 'commtbl'));
+
+
+			var testObj2 = [
+				{"name" : "a", "age":20, "money":1000},
+				{"name" : "b", "age":21, "money":1000},
+				{"name" : "c", "age":22, "money":1000}
+			];
+			
+			$('#ht').html(json2htmltable.ht(testObj2, 'commtbl'));
+
+		});
+	</script>
+
+</head>
+
+<body>
+	<div>
+		<h2>vertical alignment table</h2>
+		<div id="vt"></div>		
+	</div>
+	
+	<div>
+		<h2>horizontal alignment table</h2>
+		<div id="ht"></div>		
+	</div>
+</body>
+</html>
