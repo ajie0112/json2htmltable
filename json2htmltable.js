@@ -3,7 +3,7 @@ var json2htmltable = (function($){
 	// vertical align table
 	var verticalAlign = function(obj, cssClass){
 		
-		var html = "<table class='"+cssClass+"'>";
+	var html = "<table class='"+cssClass+"'>";
         $.each(obj, function(key, val){
             if (typeof(val) == "string" && val.match(/\[|\{/)) {
                 val = $.parseJSON(val);
